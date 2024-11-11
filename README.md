@@ -81,7 +81,7 @@ To deploy and use the Radius app with Flux, follow these steps:
       --owner=filipevrevez \
       --repository=radius-demo \
       --branch=main \
-      --path=clusters/kind \
+      --path=flux/clusters/kind \
       --personal
 
   ```
