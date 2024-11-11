@@ -70,6 +70,22 @@ To deploy and use the Radius app with Flux, follow these steps:
   ```
 
 2. Configure Flux: Set up Flux in your Kubernetes cluster and link it to this repository.
+
+  ```bash
+    export GITHUB_TOKEN=<your-github-token>
+    
+    flux check --pre
+
+    flux bootstrap github \
+      --token-auth \
+      --owner=filipevrevez \
+      --repository=radius-demo \
+      --branch=main \
+      --path=clusters/kind \
+      --personal
+
+  ```
+
 3. Deploy Radius: Apply Radius manifests to your Kubernetes cluster.
 
   ```bash
