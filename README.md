@@ -57,12 +57,16 @@ To deploy and use the Radius app with Flux, follow these steps:
 ### Prerequisites
 
 - Git Repository: A Git repository configured to hold your deployment and application configurations.
-- Kubernetes Cluster: A running Kubernetes cluster where Radius will deploy applications.
-- Flux: Install Flux in your Kubernetes cluster following Flux’s installation documentation.
+- Kind Installation: Install Kind to create a Kubernetes cluster for local development.
+- GitHub Token: Generate a GitHub token to authenticate Flux with your repository.
+- Flux CLI: Install the Flux CLI to interact with Flux and bootstrap the repository.
+- Radius CLI: Install the Radius CLI to manage your Radius resources.
 
 ### Installation
 
-1. Clone this repository:
+1. Fork this repository:
+
+2. Clone the repository:
 
   ```bash
     git clone https://github.com/filipevrevez/radius-demo.git
@@ -75,16 +79,17 @@ To deploy and use the Radius app with Flux, follow these steps:
     kind create cluster --config dev/kind-config.yaml
   ```
 
-2. Configure Flux: Set up Flux in your Kubernetes cluster and link it to this repository.
+4. Configure Flux: Set up Flux in your Kubernetes cluster and link it to this repository.
 
   ```bash
     export GITHUB_TOKEN=<your-github-token>
+    export GITHUB_USER=<your-github-username>
     
     flux check --pre
 
     flux bootstrap github \
       --token-auth \
-      --owner=filipevrevez \
+      --owner=${GITHUB_USER} \
       --repository=radius-demo \
       --branch=main \
       --path=flux/clusters/kind \
@@ -92,13 +97,7 @@ To deploy and use the Radius app with Flux, follow these steps:
 
   ```
 
-3. Deploy Radius: Apply Radius manifests to your Kubernetes cluster.
-
-  ```bash
-    kubectl apply -f manifests/
-  ```
-
-4. Monitor Deployment: Verify that Radius and your applications are running as expected using kubectl get pods -n your-namespace.
+5. Monitor Deployment: Verify that Radius and your applications are running as expected using kubectl get pods -n your-namespace.
 
 ## Contributing
 
@@ -108,4 +107,4 @@ We welcome contributions to improve this Radius demo. Please open a pull request
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-With Radius and GitOps practices using Flux, this app aims to bring simplicity, consistency, and security to cloud-native application deployments. Whether you’re part of an ops team or a developer, we hope this setup enhances your workflow!
+With Radius and GitOps practices using Flux, this project aims to bring simplicity, consistency, and security to cloud-native application deployments. Whether you’re part of an ops team or a developer, we hope this setup enhances your workflow!
