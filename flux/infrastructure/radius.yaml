@@ -37,6 +37,6 @@ spec:
       image: ghcr.io/willdavsmith/flux-demo/controller
       tag: latest
     ucp:
-      tag: 0.39.0
+      tag: 0.39
 ---
 
