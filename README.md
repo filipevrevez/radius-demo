@@ -69,6 +69,12 @@ To deploy and use the Radius app with Flux, follow these steps:
     cd radius-demo
   ```
 
+3. Create a kind cluster if you're using kind:
+
+  ```bash
+    kind create cluster --config dev/kind-config.yaml
+  ```
+
 2. Configure Flux: Set up Flux in your Kubernetes cluster and link it to this repository.
 
   ```bash
