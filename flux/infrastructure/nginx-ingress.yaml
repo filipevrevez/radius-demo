@@ -406,7 +406,6 @@ spec:
       app.kubernetes.io/component: controller
       app.kubernetes.io/instance: ingress-nginx
       app.kubernetes.io/name: ingress-nginx
-      kubernetes.io/hostname: "kind-control-plane"
   strategy:
     rollingUpdate:
       maxUnavailable: 1
