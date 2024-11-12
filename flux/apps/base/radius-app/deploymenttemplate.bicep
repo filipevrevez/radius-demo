@@ -2,33 +2,9 @@ extension radius
 
 param namespace string
 param replicas int
-param labels array
-param annotations array
-
-var commonLabels = [
-  {
-    name: 'app.kubernetes.io/name'
-    value: 'radius-app'
-  }
-  {
-    name: 'app.kubernetes.io/instance'
-    value: 'radius-app'
-  }
-  {
-    name: 'app.kubernetes.io/managed-by'
-    value: 'bicep'
-  }
-]
-
-var commonAnnotations = [
-  {
-    name: 'app.kubernetes.io/version'
-    value: '1.0'
-  }
-]
 
 resource env 'Applications.Core/environments@2023-10-01-preview' = {
-  name: 'dv'
+  name: 'dev'
   properties: {
     compute: {
       kind: 'kubernetes'
@@ -37,20 +13,11 @@ resource env 'Applications.Core/environments@2023-10-01-preview' = {
   }
 }
 
-var allLabels = concat(commonLabels, labels)
-var allAnnotations = concat(commonAnnotations, annotations)
 
 resource app 'Applications.Core/applications@2023-10-01-preview' = {
   name: 'app'
   properties: {
     environment: env.id
-    extensions: [
-      {
-        kind: 'kubernetesMetadata'
-        labels: allLabels
-        annotations: allAnnotations
-      }
-    ]
   }
 }
 
