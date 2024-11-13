@@ -8,18 +8,6 @@ This document is intended to provide a high-level overview of the developer expe
 
 ### Getting Started
 
-#### Build your image
-
-  ```bash
-    podman build -t demo:v0.0.1-rc123 .
-  ```
-
-  And push it to kind registry.
-
-  ```bash
-    kind load docker-image demo:v0.0.1-rc123 --name kind-radius
-  ```
-
 #### Initialize Radius
 
   ```bash
