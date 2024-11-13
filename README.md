@@ -89,7 +89,7 @@ To deploy and use the Radius app with Flux, follow these steps:
 
     flux bootstrap github \
       --token-auth \
-      --owner=${GITHUB_USER} \
+      --owner="filipevrevez" \
       --repository=radius-demo \
       --branch=main \
       --path=flux/clusters/kind \
