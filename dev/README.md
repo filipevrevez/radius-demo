@@ -2,9 +2,15 @@
 
 ## Introduction
 
-This document is intended to provide a high-level overview of the developer experience for the project. It is intended to be a living document that will be updated as the project evolves.
+Radius is a platform that enables developers to build, deploy, and manage applications in a Kubernetes environment. It provides a simple and intuitive way to define and deploy applications using a declarative syntax. Radius abstracts away the complexity of Kubernetes and provides a seamless developer experience.
+
+Following this doc, you will learn how to set up your development environment, create and deploy applications, and manage your applications using Radius.
 
 ## Development Environment
+
+### Prerequisites
+
+- Local Kubernetes cluster (e.g., kind, minikube, k3d)
 
 ### Getting Started
 
