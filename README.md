@@ -4,6 +4,8 @@
 
 This repository contains a set of applications and recipes that will work with [Radius](https://radapp.io/) control plane designed to streamline and automate application deployment workflows, providing both operations and development teams with a unified, GitOps-driven approach to manage cloud-native applications. This README will guide you through the purpose, benefits, and usage of Radius for both operations users and developers, with a focus on leveraging GitOps principles using Flux.
 
+This Repo was used as a demo for the [Radius](https://radapp.io/) platform in the Azure AI Portugal Community Meetup on the 13th of November 2024 [MeetUp link](https://www.meetup.com/azure-user-group-portugal/events/304454807/?_xtd=gqFyqTI4NjQ5MDk0NqFwo2FwaQ%253D%253D&from=ref).
+
 ## Purpose
 
 Modern software development often requires agile, automated, and reliable ways to deploy applications. Radius provides a cloud-native platform for deploying, managing, and scaling applications with ease. Using GitOps practices, we ensure that infrastructure and application code are stored in Git repositories, enabling continuous delivery and version control. This Radius app integrates Flux, an open-source GitOps operator, to enable automated application deployment and configuration management by watching the Git repository and applying changes automatically.
@@ -89,7 +91,7 @@ To deploy and use the Radius app with Flux, follow these steps:
 
     flux bootstrap github \
       --token-auth \
-      --owner="filipevrevez" \
+      --owner="${GITHUB_USER}" \
       --repository=radius-demo \
       --branch=main \
       --path=flux/clusters/kind \
