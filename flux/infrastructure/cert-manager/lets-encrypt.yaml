@@ -5,12 +5,11 @@ metadata:
   name: letsencrypt
 spec:
   acme:
-    # Replace the email address with your own contact email
-    email: bot@eso.pt
-    # The server is replaced in /clusters/production/infrastructure.yaml
+    email: filipevrevez@outlook.com
     server: https://acme-v02.api.letsencrypt.org/directory
+    profile: tlsserver
     privateKeySecretRef:
-      name: letsencrypt-nginx
+      name: letsencrypt
     solvers:
       - http01:
           ingress:
