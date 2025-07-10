@@ -1,0 +1,3 @@
+config:
+  - name: deploymenttemplate.bicep
+    resourceGroup: default

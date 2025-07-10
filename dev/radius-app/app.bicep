@@ -15,15 +15,10 @@ resource demo 'Applications.Core/containers@2023-10-01-preview' = {
         }
       }
       env: {
-        FOO: {
-          value: 'bar'
-        }
+
       }
     }
     connections: {
-      redis: {
-        source: redis.id
-      }
       backend: {
         source: 'http://backend:80'
       }
@@ -34,13 +29,6 @@ resource demo 'Applications.Core/containers@2023-10-01-preview' = {
 @description('The ID of your Radius Environment. Automatically injected by the rad CLI.')
 param environment string
 
-resource redis 'Applications.Datastores/redisCaches@2023-10-01-preview' = {
-  name: 'redis'
-  properties: {
-    environment: environment
-    application: application
-  }
-}
 
 resource backend 'Applications.Core/containers@2023-10-01-preview' = {
   name: 'backend'
