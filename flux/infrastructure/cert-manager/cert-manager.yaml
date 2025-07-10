@@ -35,5 +35,4 @@ spec:
     global:
       leaderElection:
         namespace: cert-manager
-    featureGates:
-      ACMEHTTP01IngressPathTypeExact: false
+    featureGates: "ACMEHTTP01IngressPathTypeExact=false"
