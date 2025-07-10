@@ -1,3 +1,4 @@
 config:
   - name: deploymenttemplate.bicep
     resourceGroup: default
+    params: app.bicepparam
