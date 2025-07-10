@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: radius-app
+  name: radius-app-flux
   labels:
-    name: "radius-app"
-    kubernetes.io/metadata.name: "radius-app"
+    name: "radius-app-flux"
+    kubernetes.io/metadata.name: "radius-app-flux"

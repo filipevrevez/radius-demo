@@ -110,5 +110,5 @@ spec:
       }
     }
   parameters:
-    namespace: "radius-app"
+    namespace: "radius-app-flux"
     replicas: "1"
