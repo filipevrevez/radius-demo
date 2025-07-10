@@ -4,4 +4,4 @@ namespace: radius-app
 resources:
   - namespace.yaml
   # - deploymenttemplate.yaml
-  - radius-gitops-config.yaml
+  # - radius-gitops-config.yaml
