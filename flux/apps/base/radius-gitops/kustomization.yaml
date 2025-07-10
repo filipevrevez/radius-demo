@@ -3,6 +3,4 @@ kind: Kustomization
 namespace: radius-app
 resources:
   - namespace.yaml
-  - radius-gitops-config.yaml
-  - depploymenttemplate.bicep
-  - app.bicepparam
+  - deploymenttemplate.yaml
